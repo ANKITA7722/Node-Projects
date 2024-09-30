@@ -1,24 +1,31 @@
-const StuModel = require("../models/studentModel")
+const StuModel = require("../models/studentModels")
 
 const stuInformation = (req, res) => {
-    res.send("This is Student informatin we are cybrom")
+    res.send("This is Student informatin we are cybrom");
 }
 
-const studataSave = (req, res) => {
-    const {rollno,name,city}=req.body;
+const studentSave = (req, res) => {
+    const {rollno,name,city,fees} = req.body;
 
 
     const student=new StuModel({
         
         rollno:rollno,
         name:name,
-        city:city
+        city:city,
+        fees:fees
         
         })
     student.save();
-    res.send("Data succesfully Save")
+    res.send("Data succesfully Save");
 }
+
+const studentDisplay=async (req,res)=>{
+    const studata= await StuModel.find();
+     res.send(studata);
+ }
 module.exports = {
     stuInformation,
-    studataSave
+    studentSave,
+    studentDisplay
 }

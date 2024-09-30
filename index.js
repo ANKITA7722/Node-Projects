@@ -3,16 +3,15 @@
 const express =require("express")
 const app=express();
 const mongoose=require("mongoose")
-const StuRoute=require("./Route/StudentRoute");
-
+const StuRoute=require("./Route/StudenstRoute");
 const bodyParser = require("body-parser");
 
-mongoose.connect("mongodb://127.0.0.1:27017/MyTable").then(()=>{
-    console.log("Data Succesfully connected")
+mongoose.connect("mongodb://127.0.0.1:27017/kamlesh").then(()=>{
+    console.log("Database Succesfully connected");
 })
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.use("/students",StuRoute)
 
