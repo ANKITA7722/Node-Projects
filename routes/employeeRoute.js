@@ -5,7 +5,14 @@ const EmpController = require("../controllers/empController");
 route.get("/info", EmpController.empInfo);
 route.post("/save", EmpController.empSave);
 route.get("/display", EmpController.empDisplay);
-
-
+route.post("/search", EmpController.empSearch);
 
 module.exports = route;
+
+
+
+
+
+
+
+
