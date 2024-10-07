@@ -52,6 +52,9 @@ app.get("/about", middlewere,(req,res)=>{
     console.log("my obj "+ req.myclg)
     res.send("about page " + req.myclg);
 
+
+
+
 })
 app.listen(8000, ()=>{
     console.log("server run in 8000 !!")
