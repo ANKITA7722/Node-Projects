@@ -25,7 +25,6 @@
 //     console.log("this is my middlewere");
 //     req.MyName = "ankita bobde";
 //     next();
-
 // }
 // app.use(MyName)
 // app.get("/", (req, res, next) => {
@@ -33,30 +32,28 @@
 //     console.log(req.MyName);
 //     res.send("hello this home page ")
 //     next()
-
 // })
 // app.listen(8000, () => {
 //     console.log("server run on 8000! port");
 // })
 
-const express=require("express");
-const app = express();
-
-const middlewere=require("./middlewere/middleWere");
-app.get("/",(req,res)=>{
-    console.log("Home page" + req.myclg);
-    res.send("welcom to bhopal!!!"+ req.myclg)
-}) 
-app.get("/about", middlewere,(req,res)=>{
-    console.log("about page");
-    console.log("my obj "+ req.myclg)
-    res.send("about page " + req.myclg);
 
 
+// const express=require("express");
+// const app = express();
+// const middlewere=require("./middlewere/middleWere");
+// app.get("/",(req,res)=>{
+//     console.log("Home page" + req.myclg);
+//     res.send("welcom to bhopal!!!"+ req.myclg)
+// }) 
+// app.get("/about", middlewere,(req,res)=>{
+//     console.log("about page");
+//     console.log("my obj "+ req.myclg)
+//     res.send("about page " + req.myclg);
+// })
+// app.listen(8000, ()=>{
+//     console.log("server run in 8000 !!")
+// })
 
 
-})
-app.listen(8000, ()=>{
-    console.log("server run in 8000 !!")
-})
 
