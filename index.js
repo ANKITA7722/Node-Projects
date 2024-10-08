@@ -56,4 +56,20 @@
 // })
 
 
+const express = require("express");
+ const app = express();
 
+ const mongoose=require("mongoose");
+ require("dotenv").config();
+ const port=process.env.PORT || 3000;
+  mongoose.connect(process.env.DATABASE_STRING).then(()=>{
+    console.log("DB succefully connected");
+  });
+
+  app.get("/",(req,res)=>{
+    res.send("hello" +process.env.SECRETE_KEY)
+  })
+
+ app.listen(port, () => {
+         console.log(`server run on ${port}`);
+     })
